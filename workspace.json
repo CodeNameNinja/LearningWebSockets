@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "socket-basics": "packages/socket-basics"
+  }
 }

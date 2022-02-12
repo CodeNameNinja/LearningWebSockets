@@ -1,0 +1,39 @@
+{
+  "root": "packages/socket-basics",
+  "sourceRoot": "packages/socket-basics/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/socket-basics",
+        "main": "packages/socket-basics/src/index.ts",
+        "tsConfig": "packages/socket-basics/tsconfig.app.json",
+        "assets": ["packages/socket-basics/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "socket-basics:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/socket-basics/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/socket-basics"],
+      "options": {
+        "jestConfig": "packages/socket-basics/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
